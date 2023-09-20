@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            background-color:grey;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .left {
+            flex: 1;
+            padding: 20px;
+            border-right: 1px solid #ccc;
+        }
+
+        .right {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .student-box {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>Student Registration Form</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required style="width:600px;">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required style="width:600px;">
+                </div>
+                <div class="form-group">
+                    <label for="website">Website:</label>
+                    <input type="text" id="website" name="website" required style="width:600px;">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image link:</label>
+                    <input type="text" id="image" name="image" required style="width:600px;">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    Male <input type="radio" id="gender" name="gender" value="Male" required>
+                    Female <input type="radio" id="gender" name="gender" value="Female" required>
+                </div>
+                <div class="form-group">
+                    <label for="course">Course:</label>
+                    <select id="course" name="course">
+                        <option value="math">Maths</option>
+                        <option value="science">Science</option>
+                        <option value="history">Biology</option>
+                        <option value="history">Sociial</option>
+                    </select>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div class="right" id="student-details-container">
+            <h2>Registered Student Details</h2>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const website = document.getElementById("website").value;
+            const image = document.getElementById("image").value;
+            const gender = document.getElementById("gender").value;
+            const course = document.getElementById("course").value;
+            const studentDetailsContainer = document.getElementById("student-details-container");
+
+            const studentBox = document.createElement("div");
+            studentBox.classList.add("student-box");
+            studentBox.innerHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Website:</strong> ${website}</p>
+                <p><strong>Image link:</strong> ${image}</p>
+                <p><strong>Gender:</strong> ${gender}</p>
+                <p><strong>Course:</strong> ${course}</p>
+            `;
+
+            studentDetailsContainer.appendChild(studentBox);
+
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("website").value = "";
+            document.getElementById("image").value = "";
+            document.getElementById("gender").value = "";
+            document.getElementById("course").value = "";
+        });
+    </script>
+</body>
+</html>
