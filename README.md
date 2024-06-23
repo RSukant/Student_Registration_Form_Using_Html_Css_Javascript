@@ -15,9 +15,6 @@ A web application for student registration that captures student details and dis
 - Change Styles: Modify the style section within the index.html file or add an external CSS file to customize the look and feel of the app.
 - Add Features: Enhance the app by adding new features like edit/delete student details, validation for form inputs, and storing data persistently.
   
-## Contribution
-Feel free to fork this repository and submit pull requests. Any contributions, whether they are bug fixes, new features, or improvements to documentation, are welcome.
-
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
