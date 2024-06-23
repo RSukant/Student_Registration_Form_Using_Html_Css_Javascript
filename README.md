@@ -22,7 +22,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 #### Contact: sukantravichandran17@gmail.com
 #### GitHub: https://github.com/RSukant
 
-## Screenshots
+## Screenshot
 ![image](https://github.com/RSukant/Student_Registration_Form_Using_Html_Css_Javascript/assets/143053393/e26a9abe-60a6-4d68-af2b-e0dd95f1132f)
 
 
